@@ -13,123 +13,97 @@
 <meta property="og:image" content="https://makerearn.com/images/og-image.png">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Cloudflare for Indie Makers: The Complete Free Tier Guide","datePublished":"2026-06-17","author":{"@type":"Organization","name":"Maker Earn"}}
+</script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
     <div class="nav-links">
-      <a href="/#articles">文章</a>
-      <a href="/about.html">关于</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <a href="/#articles" data-i18n="nav.articles">Articles</a>
+      <a href="/about.html" data-i18n="nav.about">About</a>
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">中文</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
     </div>
   </div>
 </nav>
 
 <main class="container-narrow">
   <div class="article-header">
-    <div class="cat">⚡ 效率工具</div>
-    <h1>独立创作者的 Cloudflare 全家桶指南</h1>
-    <div class="article-meta"><span>🕐 14 分钟阅读</span><span>📅 2026-06-17</span></div>
+    <div class="cat"><i data-lucide="zap" class="icon-sm"></i> <span data-i18n="cat.productivity">Productivity</span></div>
+    <h1 data-i18n="article.cloudflare.title">Cloudflare for Indie Makers: The Complete Free Tier Guide</h1>
+    <div class="article-meta">
+      <span><i data-lucide="clock" class="icon-xs"></i> <span data-i18n="article.cloudflare.readtime">14 min read</span></span>
+      <span><i data-lucide="calendar" class="icon-xs"></i> <span data-i18n="article.cloudflare.date">2026-06-17</span></span>
+    </div>
   </div>
 
-  <div class="article-body">
-    <p>Cloudflare 是独立创作者的隐藏外挂。大多数人只知道它是 CDN，实际上它的免费版有 20+ 个服务，覆盖了你建站需要的几乎所有基础设施。</p>
+  <div class="article-body" data-i18n="article.cloudflare.body">
+<p>Cloudflare is the indie creator's hidden superpower. Most people think it's just a CDN, but its free tier actually offers 20+ services covering nearly all the infrastructure you need to run a website.</p>
 
-    <h2>Cloudflare 免费版能做什么？</h2>
-    <ul>
-      <li>托管静态网站（Pages，无限流量）</li>
-      <li>注册和管理域名（比 Namecheap 便宜）</li>
-      <li>全球 CDN 加速</li>
-      <li>DDoS 防护</li>
-      <li>免费 SSL 证书</li>
-      <li>Web Analytics（不依赖 Google Analytics）</li>
-      <li>无服务器函数（Workers，每日 10 万次免费）</li>
-      <li>KV 存储、D1 数据库（免费额度）</li>
-      <li>表单处理、邮件路由</li>
-      <li>图片优化、缓存规则</li>
-    </ul>
-    <p>说真的，一个独立创作者的网站，免费版完全够用。不够用的是你对它的了解。</p>
+    <h2>What Can Cloudflare's Free Tier Do?</h2>
+    <ul><li>Host static sites (Pages, unlimited bandwidth)</li><li>Register and manage domains (cheaper than Namecheap)</li><li>Global CDN acceleration</li><li>DDoS protection</li><li>Free SSL certificates</li><li>Web Analytics (no Google Analytics dependency)</li><li>Serverless functions (Workers, 100K free requests/day)</li><li>KV storage, D1 database (free tier)</li><li>Form handling, email routing</li><li>Image optimization, cache rules</li></ul>
+    <p>Honestly, for an indie creator's website, the free tier is more than enough. The only thing lacking is your knowledge of what it can do.</p>
 
-    <h2>第一步：域名注册</h2>
-    <p>直接在 Cloudflare 买域名，不要经过第三方。为什么？</p>
-    <ol>
-      <li>Cloudflare 卖域名几乎零利润（只收注册局成本价）</li>
-      <li>不需要额外配置 DNS，买完直接管</li>
-      <li>没有隐藏续费涨价（Namecheap、GoDaddy 第一年便宜第二年翻倍）</li>
-    </ol>
-    <p>一个 .com 域名约 $10/年，直接在 Cloudflare Dashboard → Domain Registration 搜索购买。</p>
+    <h2>Step 1: Domain Registration</h2>
+    <p>Buy your domain directly from Cloudflare, not through a third party. Why?</p>
+    <ol><li>Cloudflare sells domains at near zero profit (registry cost only)</li><li>No extra DNS configuration needed — buy it, manage it, done</li><li>No hidden renewal price hikes (Namecheap and GoDaddy offer cheap year one, then double on renewal)</li></ol>
+    <p>A .com domain is roughly $10/year. Go to Cloudflare Dashboard → Domain Registration and search to buy.</p>
 
-    <h2>第二步：网站托管（Pages）</h2>
-    <p>如果你的网站是纯静态（HTML+CSS+JS，就是我们这种内容站），Cloudflare Pages 是最佳选择：</p>
-    <ul>
-      <li>直接连 GitHub 仓库，Push 代码自动部署</li>
-      <li>全球 330+ 节点，访问速度极快</li>
-      <li>无限流量、无限请求（免费）</li>
-      <li>自带预览部署（每个 PR 自动生成预览链接）</li>
-    </ul>
-    <p>部署步骤：Pages → 创建项目 → 连接 GitHub 仓库 → 设置构建命令（纯静态选 None）→ 部署。全程 2 分钟。</p>
+    <h2>Step 2: Site Hosting (Pages)</h2>
+    <p>If your site is pure static (HTML+CSS+JS, like this content site), Cloudflare Pages is the best choice:</p>
+    <ul><li>Direct GitHub repo connection — push code, auto-deploy</li><li>330+ global edge nodes, blazing fast access speed</li><li>Unlimited bandwidth, unlimited requests (free)</li><li>Built-in preview deployments (auto-generated preview URL per PR)</li></ul>
+    <p>Deployment steps: Pages → Create Project → Connect GitHub repo → Set build command (select None for pure static) → Deploy. Total time: 2 minutes.</p>
 
-    <h2>第三步：分析工具（Web Analytics）</h2>
-    <p>Google Analytics 太臃肿、隐私不友好、还被很多浏览器拦截。Cloudflare Web Analytics 是更好的选择：</p>
-    <ul>
-      <li>基于服务器端数据，不会被 AdBlock 拦截</li>
-      <li>不追踪个人隐私，不需要 Cookie 弹窗</li>
-      <li>核心指标都有：PV、UV、来源、国家、设备</li>
-      <li>完全免费</li>
-    </ul>
-    <p>在 Dashboard → Analytics & Logs → Web Analytics 里添加你的站点，把 JS 代码放到页面 &lt;head&gt; 里即可。</p>
+    <h2>Step 3: Analytics (Web Analytics)</h2>
+    <p>Google Analytics is bloated, privacy-unfriendly, and blocked by many browsers. Cloudflare Web Analytics is a better choice:</p>
+    <ul><li>Server-side data, not blocked by AdBlock</li><li>No personal privacy tracking, no cookie banner needed</li><li>All core metrics: PV, UV, source, country, device</li><li>Completely free</li></ul>
+    <p>Go to Dashboard → Analytics & Logs → Web Analytics, add your site, and place the JS snippet in your page's &lt;head&gt;.</p>
 
-    <h2>第四步：基础安全配置</h2>
+    <h2>Step 4: Basic Security Configuration</h2>
     <h3>SSL/TLS</h3>
-    <p>Cloudflare 默认提供免费 SSL 证书。在 SSL/TLS 设置里选"Full (strict)"，确保访问者和 Cloudflare 之间、Cloudflare 和你的服务器之间都加密。</p>
-
-    <h3>安全头</h3>
-    <p>在 Pages 项目的根目录创建一个 <code>_headers</code> 文件（注意前面是下划线）：</p>
+    <p>Cloudflare provides free SSL certificates by default. In SSL/TLS settings, select "Full (strict)" to ensure encryption both between visitors and Cloudflare, and between Cloudflare and your server.</p>
+    <h3>Security Headers</h3>
+    <p>Create a <code>_headers</code> file in your Pages project root:</p>
     <pre>/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()</pre>
+    <h3>Cache Rules</h3>
+    <p>In Dashboard → Caching → Cache Rules, set:</p>
+    <ul><li>HTML files: cache 1 hour (updates take effect promptly)</li><li>CSS/JS/images: cache 1 month (these rarely change; use versioned filenames for updates)</li></ul>
 
-    <h3>缓存规则</h3>
-    <p>在 Dashboard → Caching → Cache Rules 里设置：</p>
-    <ul>
-      <li>HTML 文件缓存 1 小时（内容更新后能及时生效）</li>
-      <li>CSS/JS/图片缓存 1 个月（这些文件很少变，加版本号控制更新）</li>
-    </ul>
+    <h2>Step 5: Other Useful Features</h2>
+    <h3>Workers (Serverless Functions)</h3>
+    <p>Need simple backend logic (form submissions, API proxying, A/B testing)? Workers give you 100K free requests per day. Just a few lines of JS.</p>
+    <h3>Email Routing</h3>
+    <p>Want hello@yourdomain.com but don't want to maintain a mail server? Cloudflare Email Routing forwards your domain emails to your existing Gmail — free.</p>
+    <h3>Zaraz (Third-Party Script Management)</h3>
+    <p>Your site loads GA, Facebook Pixel, Hotjar... these third-party scripts slow things down. Zaraz loads them through Cloudflare's edge network — faster and better for user privacy.</p>
 
-    <h2>第五步：其他实用功能</h2>
-
-    <h3>Workers（无服务器函数）</h3>
-    <p>需要一个简单的后端逻辑（比如表单提交、API 中转、A/B 测试）？Workers 每天免费 10 万次请求。写几行 JS 就行。</p>
-
-    <h3>Email Routing（邮件路由）</h3>
-    <p>想要 hello@你的域名.com 但不想维护邮件服务器？Cloudflare Email Routing 把你的域名邮箱转发到你现有的 Gmail，免费。</p>
-
-    <h3>Zaraz（第三方脚本管理）</h3>
-    <p>你的网站放了 GA、Facebook Pixel、Hotjar…… 这些第三方脚本拖慢网站。Zaraz 把它们通过 Cloudflare 的边缘网络加载，速度更快、用户隐私更好。</p>
-
-    <h2>总结：独立创作者的标准配置</h2>
-    <p>一个内容站的最小化 Cloudflare 配置：</p>
-    <ul>
-      <li>域名：Cloudflare Registrar</li>
-      <li>托管：Cloudflare Pages（连 GitHub）</li>
-      <li>CDN/安全：默认开启</li>
-      <li>分析：Web Analytics</li>
-      <li>邮件：Email Routing → 转发到 Gmail</li>
-    </ul>
-    <p>全年花费：域名 $10。其他全部 $0。</p>
-
-    <div class="cta-card">
-      <h4>☁️ 还没用 Cloudflare？</h4>
-      <p>注册免费账号，把域名迁过去，你的网站速度和安全性立刻提升一个档次。</p>
-    </div>
+    <h2>Summary: The Indie Creator's Standard Stack</h2>
+    <p>A minimal Cloudflare configuration for a content site:</p>
+    <ul><li>Domain: Cloudflare Registrar</li><li>Hosting: Cloudflare Pages (connected to GitHub)</li><li>CDN/Security: Enabled by default</li><li>Analytics: Web Analytics</li><li>Email: Email Routing → forward to Gmail</li></ul>
+    <p>Annual cost: $10 for the domain. Everything else: $0.</p>
   </div>
 </main>
 
-<footer class="footer"><p>© 2026 搞钱工具箱</p><div class="footer-links"><a href="/">首页</a></div></footer>
+<footer class="footer">
+  <p data-i18n="footer.copyright">© 2026 Maker Earn · Helping indie creators build independent income</p>
+  <div class="footer-links">
+    <a href="/" data-i18n="nav.articles">Articles</a>
+    <a href="/sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

@@ -23,116 +23,102 @@
   "author":{"@type":"Organization","name":"Maker Earn"}
 }
 </script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
     <div class="nav-links">
-      <a href="/#articles">文章</a>
-      <a href="/about.html">关于</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <a href="/#articles" data-i18n="nav.articles">Articles</a>
+      <a href="/about.html" data-i18n="nav.about">About</a>
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">中文</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
     </div>
   </div>
 </nav>
 
 <main class="container-narrow">
   <div class="article-header">
-    <div class="cat">📦 数字产品</div>
-    <h1>Gumroad 新手完全指南：从注册到卖出第一单</h1>
+    <div class="cat"><i data-lucide="package" class="icon-sm"></i> <span data-i18n="cat.digital">Digital Products</span></div>
+    <h1 data-i18n="article.gumroad.title">Gumroad Beginner's Guide: From Signup to First Sale</h1>
     <div class="article-meta">
-      <span>🕐 12 分钟阅读</span>
-      <span>📅 2026-06-30</span>
+      <span><i data-lucide="clock" class="icon-xs"></i> <span data-i18n="article.gumroad.readtime">12 min read</span></span>
+      <span><i data-lucide="calendar" class="icon-xs"></i> <span data-i18n="article.gumroad.date">2026-06-30</span></span>
     </div>
   </div>
 
-  <div class="article-body">
-    <p>Gumroad 是目前最流行的数字产品销售平台。不管你想卖电子书、Notion 模板、设计素材还是在线课程，Gumroad 都能帮你搞定。</p>
-    <p>这篇教程从零开始，带你走完整个流程：注册 → 设置 → 上传产品 → 收款 → 卖出第一单。</p>
+  <div class="article-body" data-i18n="article.gumroad.body">
+<p>Gumroad is the most popular digital product sales platform. Whether you want to sell ebooks, Notion templates, design assets, or online courses, Gumroad has you covered.</p>
+    <p>This tutorial walks you through the entire process: signup → setup → upload product → accept payment → make your first sale.</p>
 
-    <h2>为什么选 Gumroad？</h2>
-    <p>跟其他平台比，Gumroad 有三个核心优势：</p>
+    <h2>Why Choose Gumroad?</h2>
+    <p>Compared to other platforms, Gumroad has three core advantages:</p>
     <ul>
-      <li><strong>零门槛</strong>：不需要营业执照，不需要公司，个人就能注册</li>
-      <li><strong>品类不限</strong>：电子书、模板、预设、课程、代码、设计源文件…… 只要是数字文件都能卖</li>
-      <li><strong>自带支付</strong>：支持信用卡、PayPal，买家付款直接到你账户</li>
+      <li><strong>Zero barrier to entry</strong>: No business license, no company required — individuals can register</li>
+      <li><strong>No category restrictions</strong>: Ebooks, templates, presets, courses, code, design source files — any digital file can be sold</li>
+      <li><strong>Built-in payments</strong>: Supports credit cards and PayPal, payments go directly to your account</li>
     </ul>
-    <p>费率方面：免费版收 10% 佣金，付费版（$10/月）只收 2.9% + 30¢ 交易费。如果你月销超过 $100，建议直接上付费版，算下来更划算。</p>
+    <p>Fee structure: the free plan charges 10% commission, while the paid plan ($10/month) only charges 2.9% + 30¢ per transaction. If you're selling over $100/month, go with the paid plan — the math works out better.</p>
 
-    <h2>第一步：注册 Gumroad 账号</h2>
-    <p>去 <a href="https://gumroad.com" target="_blank" rel="nofollow">gumroad.com</a> 点 Sign Up，用 Google 账号或邮箱注册即可。注册后需要设置：</p>
+    <h2>Step 1: Sign Up for Gumroad</h2>
+    <p>Go to <a href="https://gumroad.com" target="_blank" rel="nofollow">gumroad.com</a> and click Sign Up. Use your Google account or email to register. After signing up, you'll need to set up:</p>
     <ol>
-      <li><strong>个人资料</strong>：头像、Bio（用一句话说清楚你卖什么）、社交媒体链接</li>
-      <li><strong>支付设置</strong>：绑定 Stripe（用于收款）。中国大陆用户需要注册 Stripe Atlas 或用其他方式，这点后面单独说</li>
-      <li><strong>URL 自定义</strong>：把默认的一串数字改成你的名字，比如 gumroad.com/你的名字</li>
+      <li><strong>Profile</strong>: Avatar, bio (one sentence explaining what you sell), social media links</li>
+      <li><strong>Payment settings</strong>: Connect Stripe (for receiving payments). Non-US users may need alternative setups — covered separately below</li>
+      <li><strong>Custom URL</strong>: Change the default random string to your name, e.g. gumroad.com/yourname</li>
     </ol>
 
-    <h2>第二步：创建第一个产品</h2>
-    <p>点 Products → New Product，你会看到这些选项：</p>
+    <h2>Step 2: Create Your First Product</h2>
+    <p>Click Products → New Product, and you'll see these options:</p>
     <ul>
-      <li><strong>产品名称</strong>：清晰直接比花哨重要。比如"Notion 项目管理模板"比"终极效率神器"好一百倍</li>
-      <li><strong>价格</strong>：新手建议从 $5-$15 起步，低价好卖、积累评价</li>
-      <li><strong>描述</strong>：用买家视角写——"你会得到什么"、"能解决什么问题"、"包含哪些文件"</li>
-      <li><strong>封面图</strong>：1600×840 像素，干净专业</li>
-      <li><strong>文件上传</strong>：支持 ZIP、PDF、图片等多种格式</li>
+      <li><strong>Product name</strong>: Clear and direct beats clever. "Notion Project Management Template" is 100x better than "Ultimate Productivity Powerhouse"</li>
+      <li><strong>Price</strong>: Start at $5-$15 as a beginner — low price, easy to sell, build reviews</li>
+      <li><strong>Description</strong>: Write from the buyer's perspective — "What you'll get", "What problem this solves", "What files are included"</li>
+      <li><strong>Cover image</strong>: 1600×840 pixels, clean and professional</li>
+      <li><strong>File upload</strong>: Supports ZIP, PDF, images, and more</li>
     </ul>
 
-    <h2>第三步：定价策略</h2>
-    <p>Gumroad 提供的定价选项很灵活：</p>
+    <h2>Step 3: Pricing Strategy</h2>
+    <p>Gumroad offers flexible pricing options:</p>
     <ul>
-      <li><strong>固定价格</strong>：适合大多数产品</li>
-      <li><strong>买家自主定价</strong>：设一个最低价，让买家自己加价（适合粉丝经济）</li>
-      <li><strong>分期付款</strong>：高价产品（$100+）可以分 3-6 期</li>
-      <li><strong>折扣码</strong>：可以创建限时折扣，促进销售</li>
+      <li><strong>Fixed price</strong>: Best for most products</li>
+      <li><strong>Pay what you want</strong>: Set a minimum price, let buyers add more (great for fan-driven sales)</li>
+      <li><strong>Installments</strong>: Higher-priced products ($100+) can be split into 3-6 payments</li>
+      <li><strong>Discount codes</strong>: Create time-limited discounts to boost sales</li>
     </ul>
-    <p>一个很有效的策略：<strong>设置两个版本</strong>。基础版 $9，完整版 $19。很多人会选中间的。这叫"锚定效应"。</p>
+    <p>An effective strategy: <strong>offer two versions</strong>. Basic at $9, Complete at $19. Most people will pick the middle option. This is called "anchoring."</p>
 
-    <h2>第四步：如何推广</h2>
-    <p>产品上架只是开始，没人知道你的产品存在才是最大的问题。几种实用推广方式：</p>
+    <h2>Step 4: How to Promote</h2>
+    <p>Listing your product is just the beginning. The real challenge is getting people to know it exists. Here are some practical promotion methods:</p>
     <ol>
-      <li><strong>社交媒体</strong>：在 Twitter/X、Reddit 相关子版块分享你的产品故事和使用场景</li>
-      <li><strong>写教程文章</strong>：写一篇跟你的产品相关的教程（比如你现在读的这篇），文末放产品链接</li>
-      <li><strong>Product Hunt 发布</strong>：数字工具类产品的最佳冷启动渠道</li>
-      <li><strong>建立邮件列表</strong>：用 Gumroad 自带的邮件功能收集买家邮箱，新品直接推</li>
+      <li><strong>Social media</strong>: Share your product story and use cases on Twitter/X and relevant Reddit communities</li>
+      <li><strong>Write tutorial articles</strong>: Write a guide related to your product (like the one you're reading now), with a product link at the end</li>
+      <li><strong>Product Hunt launch</strong>: The best cold-start channel for digital tool products</li>
+      <li><strong>Build an email list</strong>: Use Gumroad's built-in email feature to collect buyer emails and notify them of new products</li>
     </ol>
 
-    <h2>常见问题</h2>
-    <h3>中国大陆用户怎么收款？</h3>
-    <p>Gumroad 默认用 Stripe 收款，Stripe 目前不完全支持中国大陆个人用户。你可以：注册一家美国公司（通过 Stripe Atlas）、用香港 Stripe 账号、或者通过 Payoneer 中转。</p>
+    <h2>FAQ</h2>
+    <h3>How do non-US creators receive payments?</h3>
+    <p>Gumroad uses Stripe by default for payments. If Stripe isn't fully available in your country, alternatives include registering a US company (via Stripe Atlas), using a supported-region Stripe account, or routing through Payoneer.</p>
 
-    <h3>需要交税吗？</h3>
-    <p>Gumroad 会自动代收代缴欧盟 VAT。美国用户需要填写 W-9 表格（报税用）。具体建议咨询会计师。</p>
-
-    <div class="cta-card">
-      <h4>🚀 准备好了吗？</h4>
-      <p>现在就去 Gumroad 注册账号，上传你的第一个产品。记住：不需要完美，先上线再迭代。</p>
-      <a href="https://gumroad.com" class="btn" target="_blank" rel="nofollow">去 Gumroad 注册</a>
-    </div>
-  </div>
-
-  <div class="related-section">
-    <h3>相关文章</h3>
-    <div class="related-grid">
-      <article class="article-card" data-cat="digital-products">
-        <span class="cat">📦 数字产品</span>
-        <h3><a href="/articles/digital-product-ideas-2026.html">2026 年最赚钱的 15 个数字产品创意</a></h3>
-        <p class="desc">不知道卖什么？这 15 个方向都有人在默默赚钱。</p>
-      </article>
-      <article class="article-card" data-cat="digital-products">
-        <span class="cat">📦 数字产品</span>
-        <h3><a href="/articles/pricing-digital-products.html">数字产品定价策略</a></h3>
-        <p class="desc">$5 还是 $50？科学定价方法。</p>
-      </article>
-    </div>
+    <h3>Do I need to pay taxes?</h3>
+    <p>Gumroad automatically collects and remits EU VAT. US sellers need to fill out a W-9 form. Consult an accountant for specific advice.</p>
   </div>
 </main>
 
 <footer class="footer">
-  <p>© 2026 搞钱工具箱</p>
-  <div class="footer-links"><a href="/">首页</a><a href="/sitemap.xml">站点地图</a></div>
+  <p data-i18n="footer.copyright">© 2026 Maker Earn · Helping indie creators build independent income</p>
+  <div class="footer-links">
+    <a href="/" data-i18n="nav.articles">Articles</a>
+    <a href="/sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
+  </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

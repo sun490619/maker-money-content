@@ -22,132 +22,82 @@
   "datePublished":"2026-06-27"
 }
 </script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
     <div class="nav-links">
-      <a href="/#articles">文章</a>
-      <a href="/about.html">关于</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <a href="/#articles" data-i18n="nav.articles">Articles</a>
+      <a href="/about.html" data-i18n="nav.about">About</a>
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">中文</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
     </div>
   </div>
 </nav>
 
 <main class="container-narrow">
   <div class="article-header">
-    <div class="cat">🤖 AI 工具</div>
-    <h1>2026 年最佳 AI 写作工具对比：ChatGPT vs Claude vs DeepSeek</h1>
+    <div class="cat"><i data-lucide="bot" class="icon-sm"></i> <span data-i18n="cat.ai">AI Tools</span></div>
+    <h1 data-i18n="article.ai-writing.title">Best AI Writing Tools 2026: ChatGPT vs Claude vs DeepSeek</h1>
     <div class="article-meta">
-      <span>🕐 14 分钟阅读</span>
-      <span>📅 2026-06-27</span>
+      <span><i data-lucide="clock" class="icon-xs"></i> <span data-i18n="article.ai-writing.readtime">14 min read</span></span>
+      <span><i data-lucide="calendar" class="icon-xs"></i> <span data-i18n="article.ai-writing.date">2026-06-27</span></span>
     </div>
   </div>
 
-  <div class="article-body">
-    <p>2026 年，AI 写作工具已经成了内容创作者的标配。但问题来了：ChatGPT、Claude、DeepSeek 这三巨头，到底选哪个？</p>
-    <p>我花了两个月，用这三款工具写了超过 200 篇文章，从中文写作、代码生成、营销文案到 SEO 优化，全面实测。下面是真实结论。</p>
+  <div class="article-body" data-i18n="article.ai-writing.body">
+<p>By 2026, AI writing tools have become essential for content creators. But here's the question: ChatGPT, Claude, DeepSeek — which of these three giants should you choose?</p>
+    <p>I spent two months writing over 200 articles with these three tools, testing them on Chinese writing, code generation, marketing copy, and SEO optimization. Here are the real results.</p>
 
-    <h2>速览对比</h2>
+    <h2>Quick Comparison</h2>
     <table style="width:100%;border-collapse:collapse;margin:1em 0">
-      <tr style="background:var(--accent-light)"><th style="padding:.5em;text-align:left">维度</th><th style="padding:.5em">ChatGPT</th><th style="padding:.5em">Claude</th><th style="padding:.5em">DeepSeek</th></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">中文质量</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">英文质量</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">长文能力</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">代码能力</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">性价比</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
-      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">上下文长度</td><td>128K</td><td>200K</td><td>128K</td></tr>
-      <tr><td style="padding:.5em">月费</td><td>$20</td><td>$20</td><td>$2-8</td></tr>
+      <tr style="background:var(--accent-light)"><th style="padding:.5em;text-align:left">Dimension</th><th style="padding:.5em">ChatGPT</th><th style="padding:.5em">Claude</th><th style="padding:.5em">DeepSeek</th></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">Chinese Quality</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">English Quality</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">Long-form Writing</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">Coding</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">Value for Money</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">Context Length</td><td>128K</td><td>200K</td><td>128K</td></tr>
+      <tr><td style="padding:.5em">Monthly Cost</td><td>$20</td><td>$20</td><td>$2-8</td></tr>
     </table>
 
-    <h2>ChatGPT（OpenAI）</h2>
-    <h3>优势</h3>
-    <ul>
-      <li><strong>生态最完整</strong>：插件、API、DALL-E 生图、代码解释器一应俱全</li>
-      <li><strong>英文写作最强</strong>：写英文文章、邮件、营销文案几乎完美</li>
-      <li><strong>社区最大</strong>：教程多、案例多、遇到问题容易搜到答案</li>
-    </ul>
-    <h3>劣势</h3>
-    <ul>
-      <li>中文偶尔生硬，翻译腔明显</li>
-      <li>长文逻辑有时跳跃，需要人工检查</li>
-      <li>$20/月不算便宜，重度使用可能有额度限制</li>
-    </ul>
-    <h3>最适合</h3>
-    <p>需要多模态（文字+图片+代码）综合能力的创作者；主要写英文内容的用户。</p>
+    <h2>ChatGPT (OpenAI)</h2>
+    <h3>Strengths</h3>
+    <ul><li><strong>Most complete ecosystem</strong>: Plugins, API, DALL-E image generation, code interpreter — all in one</li><li><strong>Best English writing</strong>: Near-perfect for English articles, emails, and marketing copy</li><li><strong>Largest community</strong>: Tons of tutorials, case studies, easy to find answers to problems</li></ul>
+    <h3>Weaknesses</h3><ul><li>Chinese output can feel stiff with noticeable translation artifacts</li><li>Long-form logic sometimes jumps around, needs human review</li><li>$20/month isn't cheap, heavy usage may hit rate limits</li></ul>
+    <h3>Best For</h3><p>Creators needing multimodal capabilities (text + images + code); primarily English content writers.</p>
 
-    <h2>Claude（Anthropic）</h2>
-    <h3>优势</h3>
-    <ul>
-      <li><strong>长文能力第一</strong>：200K 上下文，一次能处理整本书，写长文逻辑最连贯</li>
-      <li><strong>中文比 ChatGPT 自然</strong>：翻译腔更少，语感更接近人类</li>
-      <li><strong>代码能力极强</strong>：复杂项目、架构设计表现优异</li>
-    </ul>
-    <h3>劣势</h3>
-    <ul>
-      <li>没有生图功能</li>
-      <li>免费版使用次数较少</li>
-      <li>偶尔"过于谨慎"，拒绝回答一些其实无害的问题</li>
-    </ul>
-    <h3>最适合</h3>
-    <p>写长文（5000 字以上）的创作者；需要写代码的独立开发者。</p>
+    <h2>Claude (Anthropic)</h2>
+    <h3>Strengths</h3><ul><li><strong>#1 for long-form writing</strong>: 200K context — can process an entire book at once, the most coherent long-form logic</li><li><strong>More natural Chinese than ChatGPT</strong>: Less translation-like, feels closer to human writing</li><li><strong>Excellent coding ability</strong>: Outstanding performance on complex projects and architecture design</li></ul>
+    <h3>Weaknesses</h3><ul><li>No image generation capability</li><li>Fewer free tier messages</li><li>Occasionally "overly cautious," refusing to answer harmless questions</li></ul>
+    <h3>Best For</h3><p>Long-form writers (5,000+ words); indie developers who need to write code.</p>
 
-    <h2>DeepSeek（深度求索）</h2>
-    <h3>优势</h3>
-    <ul>
-      <li><strong>中文第一</strong>：中文写作最自然流畅，几乎没有 AI 感</li>
-      <li><strong>性价比爆炸</strong>：API 价格是 OpenAI 的 1/10，月费才几块钱</li>
-      <li><strong>开源模型</strong>：可以本地部署，数据不外传</li>
-    </ul>
-    <h3>劣势</h3>
-    <ul>
-      <li>英文写作稍弱于 ChatGPT 和 Claude</li>
-      <li>生态不如 OpenAI 丰富（插件少）</li>
-      <li>高峰时段可能排队</li>
-    </ul>
-    <h3>最适合</h3>
-    <p>以中文写作为主的内容创作者；预算有限但需要高质量 AI 辅助的用户。</p>
+    <h2>DeepSeek</h2>
+    <h3>Strengths</h3><ul><li><strong>#1 in Chinese</strong>: The most natural and fluid Chinese writing, almost no AI feel</li><li><strong>Insane value for money</strong>: API pricing at 1/10 of OpenAI, monthly cost is just a few dollars</li><li><strong>Open-source model</strong>: Self-hostable, your data stays private</li></ul>
+    <h3>Weaknesses</h3><ul><li>English writing slightly weaker than ChatGPT and Claude</li><li>Smaller ecosystem (fewer plugins) than OpenAI</li><li>May queue during peak hours</li></ul>
+    <h3>Best For</h3><p>Primarily Chinese content creators; users on a budget who still need high-quality AI assistance.</p>
 
-    <h2>我的实际使用方案</h2>
-    <p>我不会只用一款。我现在的组合是：</p>
-    <ul>
-      <li><strong>中文文章初稿</strong> → DeepSeek（最自然、最便宜）</li>
-      <li><strong>英文内容</strong> → Claude（英文好、长文连贯）</li>
-      <li><strong>写代码 / 建站</strong> → Claude + ChatGPT 交替用</li>
-      <li><strong>配图生成</strong> → ChatGPT（内建 DALL-E）</li>
-    </ul>
-    <p>一个月总共花费不到 $30，覆盖了所有内容创作需求。</p>
-
-    <div class="cta-card">
-      <h4>🤖 你的 AI 工具箱该升级了</h4>
-      <p>三款工具各有优势，建议都注册试用一下。DeepSeek 免费额度很大，先试不花钱。</p>
-    </div>
-  </div>
-
-  <div class="related-section">
-    <h3>相关文章</h3>
-    <div class="related-grid">
-      <article class="article-card" data-cat="ai-tools">
-        <span class="cat">🤖 AI 工具</span>
-        <h3><a href="/articles/free-ai-tools-creators.html">创作者必备的 10 个免费 AI 工具</a></h3>
-        <p class="desc">除了写作，还有哪些免费 AI 工具值得用？</p>
-      </article>
-      <article class="article-card" data-cat="ai-tools">
-        <span class="cat">🤖 AI 工具</span>
-        <h3><a href="/articles/ai-seo-content-writing.html">用 AI 写 SEO 文章全套工作流</a></h3>
-        <p class="desc">AI 写文章怎么才能被 Google 收录？</p>
-      </article>
-    </div>
+    <h2>My Actual Workflow</h2>
+    <p>I don't use just one. Here's my current setup:</p>
+    <ul><li><strong>Chinese article drafts</strong> → DeepSeek (most natural, cheapest)</li><li><strong>English content</strong> → Claude (great English, coherent long-form)</li><li><strong>Coding / site building</strong> → Claude + ChatGPT, alternating</li><li><strong>Image generation</strong> → ChatGPT (built-in DALL-E)</li></ul>
+    <p>Total monthly cost under $30, covering all my content creation needs.</p>
   </div>
 </main>
 
 <footer class="footer">
-  <p>© 2026 搞钱工具箱</p>
-  <div class="footer-links"><a href="/">首页</a><a href="/sitemap.xml">站点地图</a></div>
+  <p data-i18n="footer.copyright">© 2026 Maker Earn · Helping indie creators build independent income</p>
+  <div class="footer-links">
+    <a href="/" data-i18n="nav.articles">Articles</a>
+    <a href="/sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
+  </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>
