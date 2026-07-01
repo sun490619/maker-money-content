@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="72" fill="white">Maker Earn</text>
+  <text x="600" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-weight="400" font-size="32" fill="rgba(255,255,255,0.8)">Make Money as an Independent Creator</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-weight="500" font-size="24" fill="rgba(255,255,255,0.5)">makerearn.com</text>
+  <circle cx="600" cy="530" r="40" fill="rgba(255,255,255,0.15)"/>
+  <text x="600" y="546" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="40" fill="white">$</text>
+</svg>

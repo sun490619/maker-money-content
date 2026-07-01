@@ -1,11 +1,11 @@
 {
-  "name": "搞钱工具箱 — 数字创作者独立赚钱指南",
-  "short_name": "搞钱工具箱",
-  "description": "专注数字工具、独立创作、在线搞钱的实战教程。",
+  "name": "Maker Earn — Make Money as an Independent Creator",
+  "short_name": "Maker Earn",
+  "description": "Actionable guides on digital products, AI tools, and side hustles for indie creators.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1a1a2e",
+  "background_color": "#fafafa",
+  "theme_color": "#2563eb",
   "orientation": "any",
   "icons": [
     {

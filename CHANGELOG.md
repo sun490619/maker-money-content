@@ -1,31 +1,31 @@
-# 搞钱工具箱 — 更新日志
+# Maker Earn — Changelog
+
+## v1.3 — 2026-07-01
+
+### 🌐 全站英文化
+- 所有页面默认英文，title/description/keywords 全部英文化
+- 实现 i18n 中英文切换：右上角"中文/EN"按钮，localStorage 记住选择
+- js/i18n.js 包含完整中英双语字典
+
+### 🎨 UI 升级
+- 所有 emoji 替换为 Lucide SVG 图标（wrench/package/bot/zap/clock/calendar/mail/sun/moon/dollar-sign/briefcase）
+- 正经 favicon.svg 代替 emoji 图标
+- 字体换成 Inter（Google Fonts），优先英文 web font
+- 生成 og-image.png（1200x630）用于社交分享
+- 生成 PWA icon（192x192 + 512x512）
+
+### 🔧 修复
+- about.html 死链修复
+- GitHub Actions deploy 用 wrangler 自动部署
+
+## v1.2 — 2026-07-01
+- 域名 makerearn.com 上线
+- DNS + SSL + Cloudflare Pages 部署完成
+- GitHub Actions 自动部署验证通过
+
+## v1.1 — 2026-07-01
+- 7 个 Python 自动化脚本全家桶
+- GitHub Actions pipeline + health-check + deploy
 
 ## v1.0 — 2026-07-01
-
-### 🚀 初始上线
-- 10 篇原创文章：数字产品、AI 工具、副业搞钱、效率工具四大分类
-- 首页：文章列表 + 分类筛选 + 暗色模式
-- 关于页面
-- 404 页面
-
-### 🤖 自动化流水线脚本
-- `content_filter.py`：闲聊过滤器，正则+关键词挡掉新闻/广告/招聘
-- `content_classifier.py`：意图分类器，多维打分区分内容/工具/垃圾
-- `content_radar.py`：需求雷达+选题引擎，从 10 个水源抓取→过滤→分类→选题池
-- `ai_client.py`：多模型降级链 Ollama→Gemini→DeepSeek→HuggingFace
-- `content_guard.py`：四道质量门禁（闲聊→选题识别→质量校验→门禁拦截）+自动备份
-- `content_health_check.py`：站点体检（页面状态+死链+保鲜度+sitemap+SEO）
-- `purge_cache.py`：Cloudflare CDN 缓存刷新
-
-### 🔍 SEO 基础
-- 所有页面含 meta description、OG 标签、结构化数据
-- sitemap.xml、robots.txt
-- _headers（CSP、HSTS、缓存策略）
-- PWA 支持（manifest.json、service-worker.js）
-
-### 📋 待办
-- 域名替换（YOUR_DOMAIN → 实际域名）
-- 部署到 Cloudflare Pages
-- 配置 GitHub Actions（pipeline + health-check + deploy）
-- 配置 CodeBuddy 定时自动化
-- GSC + GA4 + Bing Webmaster 接入
+- 初始上线：10 篇文章 + 首页 + 分类筛选 + 暗色模式

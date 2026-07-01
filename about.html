@@ -1,59 +1,62 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>关于搞钱工具箱</title>
-<meta name="description" content="搞钱工具箱帮助数字创作者找到最适合自己的工具和方法，实现独立收入。">
+<title data-i18n-title="about.title">About Maker Earn</title>
+<meta name="description" content="Maker Earn helps indie creators find the right tools and strategies to build independent income.">
 <link rel="stylesheet" href="/css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
     <div class="nav-links">
-      <a href="/#articles">文章</a>
-      <a href="/about.html">关于</a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+      <a href="/#articles" data-i18n="nav.articles">Articles</a>
+      <a href="/about.html" data-i18n="nav.about">About</a>
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">中文</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
     </div>
   </div>
 </nav>
 
 <main class="container-narrow" style="padding-top:3rem;padding-bottom:3rem">
-  <h1>关于搞钱工具箱</h1>
+  <h1 data-i18n="about.title">About Maker Earn</h1>
 
-  <p>你好，我是一个独立创作者。</p>
+  <p data-i18n="about.intro">Hi, I'm an indie creator.</p>
 
-  <p>在过去几年里，我试过无数种在网上赚钱的方法：卖数字产品、做 Affiliate、写 Newsletter、接 Freelance 项目、建工具站…… 踩过很多坑，也找到了一些真正有效的方法。</p>
+  <p data-i18n="about.p1">Over the past few years, I've tried countless ways to make money online: selling digital products, affiliate marketing, newsletters, freelancing, building tool sites… I've made plenty of mistakes and found a few things that actually work.</p>
 
-  <p><strong>搞钱工具箱</strong> 就是我把这些经验整理出来的地方。</p>
+  <p data-i18n="about.p2"><strong>Maker Earn</strong> is where I organize everything I've learned.</p>
 
-  <h2>这里写什么</h2>
+  <h2 data-i18n="about.what">What we cover</h2>
   <ul>
-    <li><strong>数字产品</strong> — Gumroad 开店、Notion 模板、电子书出版、在线课程</li>
-    <li><strong>AI 工具</strong> — 最新 AI 工具测评、AI 辅助创作的实战技巧</li>
-    <li><strong>副业搞钱</strong> — Affiliate Marketing、Upwork 接单、Substack 变现</li>
-    <li><strong>效率工具</strong> — 项目管理、自动化、独立创作者必备的工具栈</li>
+    <li data-i18n="about.li1"><strong>Digital Products</strong> — Gumroad setup, Notion templates, ebook publishing, online courses</li>
+    <li data-i18n="about.li2"><strong>AI Tools</strong> — Latest AI tool reviews, practical tips for AI-assisted creation</li>
+    <li data-i18n="about.li3"><strong>Side Hustles</strong> — Affiliate marketing, Upwork freelancing, Substack monetization</li>
+    <li data-i18n="about.li4"><strong>Productivity</strong> — Project management, automation, essential tool stack for indie creators</li>
   </ul>
 
-  <h2>为什么做这个站</h2>
-  <p>网上的"搞钱教程"太多，但要么太虚（"你要有 mindset"），要么太老（2018 年的方法放到 2026 年根本不行）。</p>
-  <p>我想做一个<strong>不说废话、给出具体步骤、可以照着做</strong>的网站。每篇文章你读完，至少能立刻做一件事。</p>
+  <h2 data-i18n="about.why">Why this site exists</h2>
+  <p data-i18n="about.why1">There's too much generic "make money online" advice out there — either too vague ("you need the right mindset") or too outdated (methods from 2018 don't work in 2026).</p>
+  <p data-i18n="about.why2">I built this site to be <strong>no-fluff, step-by-step, and immediately actionable</strong>. Every article gives you at least one thing you can do right after reading.</p>
 
-  <h2>免责声明</h2>
-  <p>部分文章包含 Affiliate 链接。如果你通过我的链接购买产品，我可能获得少量佣金，这不会影响你的购买价格。我只推荐我真正用过且认可的产品。</p>
+  <h2 data-i18n="about.disclaimer">Disclosure</h2>
+  <p data-i18n="about.disclaimer1">Some articles contain affiliate links. If you purchase through my links, I may earn a small commission at no extra cost to you. I only recommend products I've actually used and trust.</p>
 </main>
 
 <footer class="footer">
-  <p>© 2026 搞钱工具箱</p>
+  <p data-i18n="footer.copyright">© 2026 Maker Earn · Helping indie creators build independent income</p>
   <div class="footer-links">
-    <a href="/">首页</a>
-    <a href="/sitemap.xml">站点地图</a>
+    <a href="/" data-i18n="nav.articles">Articles</a>
+    <a href="/sitemap.xml" data-i18n="footer.sitemap">Sitemap</a>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

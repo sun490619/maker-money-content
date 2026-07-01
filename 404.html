@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>页面未找到 — 搞钱工具箱</title>
+<title data-i18n-title="404.title">Page Not Found — Maker Earn</title>
 <meta name="robots" content="noindex,follow">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="canonical" href="https://makerearn.com/404.html">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 <main class="container" style="text-align:center;padding:6rem 1rem;">
   <h1 style="font-size:4rem;margin-bottom:0.5rem;">404</h1>
-  <p style="font-size:1.25rem;color:var(--text-muted, #666);margin-bottom:2rem;">这个页面不存在，可能链接过期或已被移除。</p>
-  <p>试试回到<a href="/">首页</a>，或看看下面的热门文章 👇</p>
+  <p style="font-size:1.25rem;color:var(--text-muted);margin-bottom:2rem;" data-i18n="404.heading">This page doesn't exist. The link may have expired or been removed.</p>
+  <p><span data-i18n="404.suggest">Try going back to the</span> <a href="/" data-i18n="404.home">homepage</a><span data-i18n="404.or">, or check out these popular articles:</span></p>
   <div class="article-grid" style="margin-top:2rem;">
     <article class="article-card">
-      <span class="cat">📦 数字产品</span>
-      <h3><a href="/articles/gumroad-beginner-guide.html">Gumroad 新手完全指南</a></h3>
-      <p class="desc">手把手教你从注册到卖出第一单。</p>
+      <span class="cat"><i data-lucide="package" class="icon-sm"></i> <span data-i18n="cat.digital">Digital Products</span></span>
+      <h3><a href="/articles/gumroad-beginner-guide.html" data-i18n="article.gumroad.title">Gumroad Beginner's Guide: From Signup to First Sale</a></h3>
+      <p class="desc" data-i18n="article.gumroad.desc">Step-by-step guide to setting up Gumroad, uploading products, pricing, and making your first sale within 7 days.</p>
     </article>
     <article class="article-card">
-      <span class="cat">🤖 AI 工具</span>
-      <h3><a href="/articles/best-ai-writing-tools-2026.html">2026 年最佳 AI 写作工具对比</a></h3>
-      <p class="desc">ChatGPT vs Claude vs DeepSeek 实测。</p>
+      <span class="cat"><i data-lucide="bot" class="icon-sm"></i> <span data-i18n="cat.ai">AI Tools</span></span>
+      <h3><a href="/articles/best-ai-writing-tools-2026.html" data-i18n="article.ai-writing.title">Best AI Writing Tools 2026: ChatGPT vs Claude vs DeepSeek</a></h3>
+      <p class="desc" data-i18n="article.ai-writing.desc">Hands-on comparison of the top three AI writing tools.</p>
     </article>
     <article class="article-card">
-      <span class="cat">💰 副业搞钱</span>
-      <h3><a href="/articles/affiliate-marketing-beginner-2026.html">Affiliate Marketing 入门</a></h3>
-      <p class="desc">2026 年还值得做联盟营销吗？</p>
+      <span class="cat"><i data-lucide="briefcase" class="icon-sm"></i> <span data-i18n="cat.sidehustle">Side Hustles</span></span>
+      <h3><a href="/articles/affiliate-marketing-beginner-2026.html" data-i18n="article.affiliate.title">Affiliate Marketing for Beginners</a></h3>
+      <p class="desc" data-i18n="article.affiliate.desc">The fundamentals of affiliate marketing in 2026.</p>
     </article>
   </div>
 </main>
+<script src="/js/i18n.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>
