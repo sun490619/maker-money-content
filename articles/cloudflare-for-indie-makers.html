@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>独立创作者的 Cloudflare 全家桶指南</title>
+<meta name="description" content="域名、托管、CDN、分析、安全——Cloudflare 免费版能做的事比你想象的多得多。独立创作者建站必备。">
+<meta name="keywords" content="Cloudflare教程,Cloudflare Pages,独立建站,网站部署">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <div class="nav-links">
+      <a href="/#articles">文章</a>
+      <a href="/about.html">关于</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container-narrow">
+  <div class="article-header">
+    <div class="cat">⚡ 效率工具</div>
+    <h1>独立创作者的 Cloudflare 全家桶指南</h1>
+    <div class="article-meta"><span>🕐 14 分钟阅读</span><span>📅 2026-06-17</span></div>
+  </div>
+
+  <div class="article-body">
+    <p>Cloudflare 是独立创作者的隐藏外挂。大多数人只知道它是 CDN，实际上它的免费版有 20+ 个服务，覆盖了你建站需要的几乎所有基础设施。</p>
+
+    <h2>Cloudflare 免费版能做什么？</h2>
+    <ul>
+      <li>托管静态网站（Pages，无限流量）</li>
+      <li>注册和管理域名（比 Namecheap 便宜）</li>
+      <li>全球 CDN 加速</li>
+      <li>DDoS 防护</li>
+      <li>免费 SSL 证书</li>
+      <li>Web Analytics（不依赖 Google Analytics）</li>
+      <li>无服务器函数（Workers，每日 10 万次免费）</li>
+      <li>KV 存储、D1 数据库（免费额度）</li>
+      <li>表单处理、邮件路由</li>
+      <li>图片优化、缓存规则</li>
+    </ul>
+    <p>说真的，一个独立创作者的网站，免费版完全够用。不够用的是你对它的了解。</p>
+
+    <h2>第一步：域名注册</h2>
+    <p>直接在 Cloudflare 买域名，不要经过第三方。为什么？</p>
+    <ol>
+      <li>Cloudflare 卖域名几乎零利润（只收注册局成本价）</li>
+      <li>不需要额外配置 DNS，买完直接管</li>
+      <li>没有隐藏续费涨价（Namecheap、GoDaddy 第一年便宜第二年翻倍）</li>
+    </ol>
+    <p>一个 .com 域名约 $10/年，直接在 Cloudflare Dashboard → Domain Registration 搜索购买。</p>
+
+    <h2>第二步：网站托管（Pages）</h2>
+    <p>如果你的网站是纯静态（HTML+CSS+JS，就是我们这种内容站），Cloudflare Pages 是最佳选择：</p>
+    <ul>
+      <li>直接连 GitHub 仓库，Push 代码自动部署</li>
+      <li>全球 330+ 节点，访问速度极快</li>
+      <li>无限流量、无限请求（免费）</li>
+      <li>自带预览部署（每个 PR 自动生成预览链接）</li>
+    </ul>
+    <p>部署步骤：Pages → 创建项目 → 连接 GitHub 仓库 → 设置构建命令（纯静态选 None）→ 部署。全程 2 分钟。</p>
+
+    <h2>第三步：分析工具（Web Analytics）</h2>
+    <p>Google Analytics 太臃肿、隐私不友好、还被很多浏览器拦截。Cloudflare Web Analytics 是更好的选择：</p>
+    <ul>
+      <li>基于服务器端数据，不会被 AdBlock 拦截</li>
+      <li>不追踪个人隐私，不需要 Cookie 弹窗</li>
+      <li>核心指标都有：PV、UV、来源、国家、设备</li>
+      <li>完全免费</li>
+    </ul>
+    <p>在 Dashboard → Analytics & Logs → Web Analytics 里添加你的站点，把 JS 代码放到页面 &lt;head&gt; 里即可。</p>
+
+    <h2>第四步：基础安全配置</h2>
+    <h3>SSL/TLS</h3>
+    <p>Cloudflare 默认提供免费 SSL 证书。在 SSL/TLS 设置里选"Full (strict)"，确保访问者和 Cloudflare 之间、Cloudflare 和你的服务器之间都加密。</p>
+
+    <h3>安全头</h3>
+    <p>在 Pages 项目的根目录创建一个 <code>_headers</code> 文件（注意前面是下划线）：</p>
+    <pre>/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()</pre>
+
+    <h3>缓存规则</h3>
+    <p>在 Dashboard → Caching → Cache Rules 里设置：</p>
+    <ul>
+      <li>HTML 文件缓存 1 小时（内容更新后能及时生效）</li>
+      <li>CSS/JS/图片缓存 1 个月（这些文件很少变，加版本号控制更新）</li>
+    </ul>
+
+    <h2>第五步：其他实用功能</h2>
+
+    <h3>Workers（无服务器函数）</h3>
+    <p>需要一个简单的后端逻辑（比如表单提交、API 中转、A/B 测试）？Workers 每天免费 10 万次请求。写几行 JS 就行。</p>
+
+    <h3>Email Routing（邮件路由）</h3>
+    <p>想要 hello@你的域名.com 但不想维护邮件服务器？Cloudflare Email Routing 把你的域名邮箱转发到你现有的 Gmail，免费。</p>
+
+    <h3>Zaraz（第三方脚本管理）</h3>
+    <p>你的网站放了 GA、Facebook Pixel、Hotjar…… 这些第三方脚本拖慢网站。Zaraz 把它们通过 Cloudflare 的边缘网络加载，速度更快、用户隐私更好。</p>
+
+    <h2>总结：独立创作者的标准配置</h2>
+    <p>一个内容站的最小化 Cloudflare 配置：</p>
+    <ul>
+      <li>域名：Cloudflare Registrar</li>
+      <li>托管：Cloudflare Pages（连 GitHub）</li>
+      <li>CDN/安全：默认开启</li>
+      <li>分析：Web Analytics</li>
+      <li>邮件：Email Routing → 转发到 Gmail</li>
+    </ul>
+    <p>全年花费：域名 $10。其他全部 $0。</p>
+
+    <div class="cta-card">
+      <h4>☁️ 还没用 Cloudflare？</h4>
+      <p>注册免费账号，把域名迁过去，你的网站速度和安全性立刻提升一个档次。</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><p>© 2026 搞钱工具箱</p><div class="footer-links"><a href="/">首页</a></div></footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

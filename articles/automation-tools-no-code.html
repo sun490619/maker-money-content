@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>零代码自动化：Zapier + Make 实战教程</title>
+<meta name="description" content="不会写代码也能做自动化。RSS 到邮件、表单到数据库、社交媒体自动发布，10 个实用自动化场景一次学会。">
+<meta name="keywords" content="Zapier教程,Make自动化,零代码自动化,工作效率">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">💰 搞钱工具箱</a>
+    <div class="nav-links">
+      <a href="/#articles">文章</a>
+      <a href="/about.html">关于</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container-narrow">
+  <div class="article-header">
+    <div class="cat">⚡ 效率工具</div>
+    <h1>零代码自动化：Zapier + Make 实战教程</h1>
+    <div class="article-meta"><span>🕐 12 分钟阅读</span><span>📅 2026-06-21</span></div>
+  </div>
+
+  <div class="article-body">
+    <p>每天花 2 小时做重复的事情？复制粘贴数据、手动发社交媒体、挨个发邮件…… 这些都可以自动化。不需要写一行代码。</p>
+
+    <h2>Zapier vs Make：选哪个？</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1em 0">
+      <tr style="background:var(--accent-light)"><th style="padding:.5em;text-align:left">维度</th><th style="padding:.5em">Zapier</th><th style="padding:.5em">Make</th></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">上手难度</td><td>⭐（超简单）</td><td>⭐⭐（稍复杂）</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">功能深度</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">免费额度</td><td>100 tasks/月</td><td>1000 ops/月</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:.5em">视觉化</td><td>列表式</td><td>流程图式</td></tr>
+      <tr><td style="padding:.5em">最佳用途</td><td>简单串联</td><td>复杂多步骤</td></tr>
+    </table>
+    <p><strong>建议</strong>：新手从 Zapier 开始，免费额度用完后切到 Make（免费额度多 10 倍，功能更强）。</p>
+
+    <h2>10 个实用自动化场景</h2>
+
+    <h3>1. RSS → 邮件（内容监测）</h3>
+    <p>用 Make 监测竞品博客的 RSS，有新文章自动发邮件通知。设置：RSS 模块（定时检查）→ Email 模块（发送通知）。10 分钟搞定。</p>
+
+    <h3>2. Google Forms → Notion 数据库</h3>
+    <p>用户填表单 → 自动写入 Notion 数据库。适合做客户管理、反馈收集、问卷汇总。设置：Google Forms 触发器 → Notion 创建条目。</p>
+
+    <h3>3. 社交媒体自动发布</h3>
+    <p>在 Notion 写好内容 → 定时自动发到 Twitter、LinkedIn。用 Make 的调度器：Notion 查询 → 文本处理 → Twitter API 发帖。</p>
+
+    <h3>4. 邮件附件自动存网盘</h3>
+    <p>Gmail 收到带附件的邮件 → 自动下载 → 保存到 Google Drive/OneDrive。Gmail 触发器 → 检测附件 → Drive 上传。</p>
+
+    <h3>5. 电商订单 → 自动发感谢信</h3>
+    <p>Gumroad 新订单 → 自动提取买家邮箱 → 发送个性化感谢邮件 + 使用指南。</p>
+
+    <h3>6. 日历事件 → Slack 通知</h3>
+    <p>Google Calendar 明天有会议 → 今晚 8 点自动发 Slack/Discord 提醒。防止忘记第二天的事。</p>
+
+    <h3>7. 表单提交 → 自动生成发票 PDF</h3>
+    <p>客户通过表单提交项目信息 → 自动生成发票 PDF → 发邮件给客户。Freelancer 的发票流程全自动。</p>
+
+    <h3>8. YouTube 新视频 → 自动写摘要发博客</h3>
+    <p>你自己的 YouTube 频道发了新视频 → Make 抓取标题和描述 → 发给 AI 生成文字版 → 发布到博客。</p>
+
+    <h3>9. 数据备份自动化</h3>
+    <p>每天凌晨 2 点，自动把 Notion 数据库导出为 CSV，备份到 Google Drive。数据安全的基本保障。</p>
+
+    <h3>10. 竞品监测仪表盘</h3>
+    <p>定期抓取竞品网站的变化（新文章、新功能）→ 汇总到 Notion 数据库 ← 自动通知你。</p>
+
+    <h2>搭建建议</h2>
+    <ol>
+      <li><strong>先列需求再搭</strong>：把你每周重复做的 5 件事列出来，挑最花时间的那件先自动化</li>
+      <li><strong>从简单开始</strong>：别一上来就做 10 步的复杂流程。2-3 步的小自动化，做好了再拼起来</li>
+      <li><strong>加错误通知</strong>：每个自动化加一个"失败时发邮件/消息给我"的步骤，防止静默断掉</li>
+    </ol>
+
+    <div class="cta-card">
+      <h4>🤖 今天省 1 小时</h4>
+      <p>打开 Make，注册免费账号，搭第一个自动化。从"RSS → 邮件"开始，10 分钟搞定。</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><p>© 2026 搞钱工具箱</p><div class="footer-links"><a href="/">首页</a></div></footer>
+<script src="/js/main.js"></script>
+</body>
+</html>
