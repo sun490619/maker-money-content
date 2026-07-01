@@ -2,11 +2,12 @@ name: 🏥 站点体检
 
 on:
   schedule:
-    - cron: "0 8 * * *"  # 每天 UTC 8:00 (北京时间 16:00)
+    - cron: "0 8,20 * * *"  # 每天 UTC 8:00 和 20:00 (北京时间 16:00 和 04:00)
   workflow_dispatch:
 
 jobs:
-  health:
+  # ====== 静态检查：文件完整性、死链、SEO ======
+  static:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,22 +17,57 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run Health Check
+      - name: Run Static Health Check
         run: |
           python content_health_check.py
           cat health_report.md >> $GITHUB_STEP_SUMMARY
 
+  # ====== 浏览器检查：真实打开网站，验证中英切换、图标等 ======
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Run Browser Health Check
+        id: browser_check
+        continue-on-error: true
+        run: |
+          python playwright_health_check.py
+          echo "severity=$?" >> $GITHUB_OUTPUT
+
+      - name: Upload health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-report
+          path: health_report.json
+
       - name: Alert on failure
-        if: failure()
+        if: steps.browser_check.outcome == 'failure'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const report = fs.readFileSync('health_report.md', 'utf8');
+            let report = '';
+            try {
+              report = fs.readFileSync('health_report.json', 'utf8');
+            } catch {
+              report = '无法读取报告文件';
+            }
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `🔴 站点体检异常 ${new Date().toISOString().slice(0,10)}`,
-              body: report.slice(0, 6000),
+              title: `🔴 浏览器体检异常 ${new Date().toISOString().slice(0, 10)}`,
+              body: '```json\n' + report.slice(0, 6000) + '\n```',
               labels: ['紧急'],
             });
