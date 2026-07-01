@@ -1,0 +1,32 @@
+name: 🚀 部署
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Pre-deploy Check
+        run: |
+          echo "=== 文件清单 ==="
+          find . -name "*.html" -not -path "./.git/*" | sort
+          echo ""
+          echo "=== 体检 ==="
+          python content_health_check.py || echo "⚠️ 体检有警告，继续部署"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy . --project-name=maker-money --branch=main
