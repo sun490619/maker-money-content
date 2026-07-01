@@ -1090,6 +1090,12 @@ function applyLang(lang) {
   // Update page title
   if (lang === 'zh') {
     document.title = document.title.replace('Maker Earn', '搞钱工具箱');
+  } else {
+    document.title = document.title.replace('搞钱工具箱', 'Maker Earn');
+  }
+  // Re-render Lucide icons after translation replaces innerHTML
+  if (typeof lucide !== 'undefined') {
+    setTimeout(() => lucide.createIcons(), 10);
   }
 }
 
@@ -1097,7 +1103,12 @@ function applyLang(lang) {
 function updateLangButton(lang) {
   const btn = document.getElementById('lang-switch');
   if (!btn) return;
-  btn.textContent = lang === 'en' ? '中文' : 'EN';
+  const label = btn.querySelector('span');
+  if (label) {
+    label.textContent = lang === 'en' ? '中文' : 'EN';
+  } else {
+    btn.textContent = lang === 'en' ? '中文' : 'EN';
+  }
 }
 
 // Init

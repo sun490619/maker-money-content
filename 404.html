@@ -11,6 +11,22 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
+    <div class="nav-links" id="nav-links">
+      <a href="/#articles" data-i18n="nav.articles">Articles</a>
+      <a href="/about.html" data-i18n="nav.about">About</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu"><i data-lucide="menu"></i></button>
+  </div>
+  <div class="menu-dropdown" id="menu-dropdown" hidden>
+    <button class="menu-item" id="lang-switch"><i data-lucide="languages"></i> <span>中文</span></button>
+    <button class="menu-item" id="theme-toggle"><i data-lucide="moon"></i> <span>Dark</span></button>
+  </div>
+</nav>
+
 <main class="container" style="text-align:center;padding:6rem 1rem;">
   <h1 style="font-size:4rem;margin-bottom:0.5rem;">404</h1>
   <p style="font-size:1.25rem;color:var(--text-muted);margin-bottom:2rem;" data-i18n="404.heading">This page doesn't exist. The link may have expired or been removed.</p>

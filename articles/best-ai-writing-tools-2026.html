@@ -29,12 +29,15 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand"><i data-lucide="dollar-sign" class="icon-brand"></i> Maker Earn</a>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="/#articles" data-i18n="nav.articles">Articles</a>
       <a href="/about.html" data-i18n="nav.about">About</a>
-      <button class="lang-switch" id="lang-switch" aria-label="Switch language">中文</button>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
     </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu"><i data-lucide="menu"></i></button>
+  </div>
+  <div class="menu-dropdown" id="menu-dropdown" hidden>
+    <button class="menu-item" id="lang-switch"><i data-lucide="languages"></i> <span>中文</span></button>
+    <button class="menu-item" id="theme-toggle"><i data-lucide="moon"></i> <span>Dark</span></button>
   </div>
 </nav>
 
