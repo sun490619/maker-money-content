@@ -17,7 +17,7 @@ from xml.etree import ElementTree as ET
 class ContentHealthCheck:
     def __init__(self, site_dir: str = ".", base_url: str = None):
         self.site_dir = site_dir
-        self.base_url = base_url or "https://maker-money.pages.dev"
+        self.base_url = base_url or "https://makerearn.com"
         self.severity = 0
         self.all_checks = {}
 

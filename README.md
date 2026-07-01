@@ -126,7 +126,7 @@
   ✅ SEO 基础做好（meta、OG、结构化数据、sitemap）
   ✅ PWA 配置就绪（manifest.json + service-worker.js）
   ✅ 404 页面已创建
-  ❌ 域名还没替换（代码里写的 YOUR_DOMAIN 占位符）
+  ✅ 域名已购买：makerearn.com，所有占位符已替换
   ❌ GitHub 仓库还没建
   ❌ 还没部署到 Cloudflare Pages
   ❌ 自动化流水线还没搭
@@ -142,7 +142,7 @@
    - 把 content-site/ 推上去
 
 2. 替换域名
-   - 所有文件中搜 YOUR_DOMAIN，替换成实际域名
+   - 域名已替换为 makerearn.com ✅
    - 域名：等我告诉你（或者你先用 maker-money.pages.dev 占位）
    - 需要替换的地方：OG 标签、canonical URL、sitemap、结构化数据、PWA manifest
 
@@ -299,7 +299,7 @@ GitHub Actions（三个 workflow）：
 □ 先 read_file content-site/ 目录看现有代码
 □ 确认域名（问我，或先用 maker-money.pages.dev）
 □ gh repo create 建仓库（如还没建）
-□ 替换所有 YOUR_DOMAIN 占位符
+□ ~~替换所有 YOUR_DOMAIN 占位符~~ ✅ 已替换为 makerearn.com
 □ git init → commit → push
 □ 连接 Cloudflare Pages 部署
 □ 写 content_filter.py（闲聊过滤器）
