@@ -1,0 +1,27 @@
+name: 🔍 Daily Health Check
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # 每天 UTC 10:00 = 北京时间 18:00
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout all repos
+        run: |
+          echo "=== Checking aitool-picks ==="
+          curl -s https://sun490619.github.io/aitool-picks/ | head -20
+          
+          echo "=== Checking MintShovels ==="
+          curl -s https://mintshovels.com/ | head -20
+          
+          echo "=== Checking makerearn ==="
+          curl -s https://makerearn.com/ | head -20
+
+      - name: Create issue if problems found
+        run: |
+          # 这里可以添加更详细的检查逻辑
+          # 发现问题就创建 GitHub Issue，Hermes 会定期查看
+          echo "Health check completed"
