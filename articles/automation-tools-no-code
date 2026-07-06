@@ -67,14 +67,14 @@
     <h2>10 Practical Automation Scenarios</h2>
     <h3>1. RSS → Email (Content Monitoring)</h3>
     <p>Monitor competitor blog RSS feeds with Make, automatically email you when new articles appear. Setup: RSS module (periodic check) → Email module (send notification). Done in 10 minutes.</p>
-    <h3>2. Google Forms → <a href="/articles/notion-setup-workflow.html">Notion</a> Database</h3>
+    <h3>2. Google Forms → <a href="/articles/notion-setup-workflow">Notion</a> Database</h3>
     <p>User fills out a form → automatically written to Notion database. Great for client management, feedback collection, survey aggregation. Setup: Google Forms trigger → Notion create entry.</p>
     <h3>3. Auto-Publish to Social Media</h3>
     <p>Write content in Notion → scheduled auto-posting to Twitter and LinkedIn. Use Make's scheduler: Notion query → text processing → Twitter API post.</p>
     <h3>4. Auto-Save Email Attachments to Cloud Storage</h3>
     <p>Gmail receives email with attachment → auto-download → save to Google Drive/OneDrive. Gmail trigger → detect attachment → Drive upload.</p>
     <h3>5. E-Commerce Orders → Auto Thank-You Email</h3>
-    <p>New <a href="/articles/gumroad-beginner-guide.html">Gumroad</a> order → auto-extract buyer email → send personalized thank-you email + usage guide.</p>
+    <p>New <a href="/articles/gumroad-beginner-guide">Gumroad</a> order → auto-extract buyer email → send personalized thank-you email + usage guide.</p>
     <h3>6. Calendar Events → Slack Notifications</h3>
     <p>Google Calendar has a meeting tomorrow → auto-send Slack/Discord reminder at 8 PM tonight. Never forget tomorrow's commitments.</p>
     <h3>7. Form Submission → Auto-Generate Invoice PDF</h3>
