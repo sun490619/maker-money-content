@@ -21,6 +21,19 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-D53DQ3JKKL', { 'send_page_view': true });
+  // Scroll & time engagement tracking (fixes GA4 false bounce rate)
+  (function(){
+    var _scrolled=false, _timed=false;
+    document.addEventListener('DOMContentLoaded',function(){
+      window.addEventListener('scroll',function(){
+        if(!_scrolled){
+          var pct=(window.scrollY+window.innerHeight)/document.documentElement.scrollHeight;
+          if(pct>=0.5){_scrolled=true;gtag('event','scroll_50pct',{event_category:'engagement'});}
+        }
+      },{passive:true});
+      setTimeout(function(){if(!_timed){_timed=true;gtag('event','time_15s',{event_category:'engagement'});}},15000);
+    });
+  })();
 </script>
 </head>
 <body>
